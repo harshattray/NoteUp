@@ -1,0 +1,32 @@
+<h1> Edit :{{note.title}}</h1>
+<blockquote>{{note.description}}</blockquote>
+<blockquote>{{note.content}}</blockquote>
+
+<form>
+  <fieldset class ="form-group">
+    <label form ="title">Category </label>
+    <select ng-options="category.id as category.name for category in categories" ng-model ="note.categoryId"></select>
+
+  </fieldset>
+  <label form ="title">User </label>
+  <select ng-options="user.id as user.name for user in users" ng-model ="note.userId"></select>  
+</fieldset>
+
+
+  <fieldset class ="form-group">
+    <label form ="title">Title </label>
+    <input class ="form-control" type ="text" id ="title" ng-model="note.title">
+  </fieldset>
+
+  <fieldset class ="form-group">
+    <label form ="title">Description</label>
+    <input class ="form-control" type ="text" id ="description" ng-model="note.description">
+  </fieldset>
+
+  <fieldset class ="form-group">
+    <label form ="content">Content </label>
+    <textarea class ="form-control" type ="text" id ="content" ng-model="note.content"></textarea>
+  </fieldset>
+
+<input type="submit" value ="{{isSubmitting ? 'saving...':'save'}}" class="btn btn-default" ng-click="saveNote(note)" ng-disabled ="isSubmitting">
+</form>

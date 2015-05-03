@@ -1,0 +1,24 @@
+<h1> New User</h1>
+<blockquote>{{user.name}}</blockquote>
+<blockquote>{{user.bio}}</blockquote>
+<blockquote>{{user.site}}</blockquote>
+
+
+<form>
+  <fieldset class ="form-group">
+    <label form ="title">  User-Name </label>
+    <input class ="form-control" type ="text" id ="title" ng-model="user.name">
+  </fieldset>
+
+  <fieldset class ="form-group">
+    <label form ="title">Description</label>
+    <input class ="form-control" type ="text" id ="description" ng-model="user.bio">
+  </fieldset>
+
+  <fieldset class ="form-group">
+    <label form ="content">site </label>
+    <input class ="form-control" type ="text" id ="content" ng-model="user.site" >
+  </fieldset>
+
+<input type="submit" class="btn btn-default" ng-click="saveUser(user)" ng-disabled ="submitVal">
+</form>
